@@ -9,5 +9,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sasaplus1-prototype/scroll-animation.js.git"
+  },
+  "dependencies": {
+    "tween.js": "^16.3.4"
   }
 }
