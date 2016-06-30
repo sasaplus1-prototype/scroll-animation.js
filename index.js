@@ -1,3 +1,8 @@
+/*!
+ * @license scroll-animation.js Copyright(c) 2016 sasa+1
+ * https://github.com/sasaplus1-prototype/scroll-animation.js
+ * Released under the MIT license.
+ */
 'use strict';
 
 var TWEEN = require('tween.js');
