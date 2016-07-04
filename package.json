@@ -1,6 +1,6 @@
 {
   "name": "scroll-animation",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "sasa+1 <sasaplus1@gmail.com>",
   "description": "animate scrolling",
   "main": "./index.js",
@@ -10,7 +10,16 @@
     "type": "git",
     "url": "https://github.com/sasaplus1-prototype/scroll-animation.js.git"
   },
+  "scripts": {
+    "build": "npm run compile && npm run minify",
+    "compile": "npm run webpack -- --output-file scroll-animation.js",
+    "minify": "npm run webpack -- --optimize-minimize --output-file scroll-animation.min.js",
+    "webpack": "webpack --colors --display-error-details --progress"
+  },
   "dependencies": {
     "tween.js": "16.3.4"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.1"
   }
 }
