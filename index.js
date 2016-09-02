@@ -51,15 +51,20 @@ function scroll(params, callback) {
   };
 
   tween = createTween(params);
-  tween
-    .onComplete(function() {
-      isComplete = true;
 
-      if (typeof callback === 'function') {
-        callback();
-      }
-    })
-    .start();
+  if (params.easing) {
+    tween.easing(params.easing);
+  }
+
+  tween.onComplete(function() {
+    isComplete = true;
+
+    if (typeof callback === 'function') {
+      callback();
+    }
+  });
+
+  tween.start();
 
   isComplete = false;
 
@@ -69,6 +74,7 @@ function scroll(params, callback) {
 }
 
 module.exports = {
+  Easing: TWEEN.Easing,
   createTween: createTween,
   scroll: scroll
 };
