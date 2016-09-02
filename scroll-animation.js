@@ -112,15 +112,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 
 	  tween = createTween(params);
-	  tween
-	    .onComplete(function() {
-	      isComplete = true;
 
-	      if (typeof callback === 'function') {
-	        callback();
-	      }
-	    })
-	    .start();
+	  if (params.easing) {
+	    tween.easing(params.easing);
+	  }
+
+	  tween.onComplete(function() {
+	    isComplete = true;
+
+	    if (typeof callback === 'function') {
+	      callback();
+	    }
+	  });
+
+	  tween.start();
 
 	  isComplete = false;
 
@@ -130,6 +135,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	module.exports = {
+	  Easing: TWEEN.Easing,
 	  createTween: createTween,
 	  scroll: scroll
 	};
